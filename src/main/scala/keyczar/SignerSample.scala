@@ -4,7 +4,7 @@ import org.keyczar.enums._
 import org.apache.commons.codec.binary.{Hex, StringUtils}
 import org.apache.commons.codec.digest.DigestUtils
 
-import ixias.security._
+import ixias.security.KeyReader
 
 object SignerSample {
   def main(args: Array[String]): Unit = {
@@ -28,7 +28,9 @@ object SignerSample {
     // 秘密鍵を用いて生成したメッセージの署名 (16進数)
     val signature = signer.sign(StringUtils.getBytesUsAscii(message))
     println("message: " + message)
-    println("0xsignature: " + signature)
-    println("signature: " + Hex.encodeHex(signature))
+    println("signature: " + signature)
+    // メッセージの検証
+    val result = signer.verify(StringUtils.getBytesUsAscii(message), signature)
+    println("verification: " + result)
   }
 }

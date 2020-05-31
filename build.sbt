@@ -21,4 +21,5 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "net.ixias" %% "ixias-core" % "1.1.22",
+  "com.google.crypto.tink" % "tink" % "1.4.0-rc2"
 )

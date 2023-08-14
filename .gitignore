@@ -1,1 +1,10 @@
 target/
+logs
+.bloop
+.bsp
+.metals
+*/*.class
+*/*.tasty
+docs/mdoc
+metals.sbt
+

@@ -1,4 +1,4 @@
-# Keyczar and Tink
+# Tink sandbox
 
 暗号処理の勉強用リポジトリ
 

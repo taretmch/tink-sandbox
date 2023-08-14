@@ -1,25 +1,10 @@
-import sbt.Keys._
-import sbt._
+import BuildSettings._
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.12.8"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
+ThisBuild / organization     := "com.github.taretmch"
+ThisBuild / organizationName := "taretmch"
 
-lazy val root = (project in file("."))
-  .settings(
-    name := "keyczar-and-tink",
-    libraryDependencies += scalaTest % Test
-  )
+lazy val root = Scala3Project("root", ".")
 
-// See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publlibraryDependencies += guice
-
-resolvers ++= Seq(
-  "IxiaS Releases" at "http://maven.ixias.net.s3-ap-northeast-1.amazonaws.com/releases"
-)
-
-libraryDependencies ++= Seq(
-  "net.ixias" %% "ixias-core" % "1.1.22",
-  "com.google.crypto.tink" % "tink" % "1.4.0-rc2"
-)
+Global / onChangedBuildSource := IgnoreSourceChanges
